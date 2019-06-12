@@ -53,13 +53,13 @@ stockNodes.forEach(el => {
     }
 
     fetch(`https://acoes-br.herokuapp.com/${acao}`).then(res => {
-      res.json().then(json => {
+      res.json().then(data => {
         div.classList.add('acao-tooltip')
         div.setAttribute('style', `position:absolute;display:block;background:#fff;z-index:99999;left:-10px;top:-40px;border-radius:4px;box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.3);`)
         
         div.innerHTML = `
           <div style="padding:10px;width:100%;height:100%;box-sizing:border-box;">
-            <span>${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(json.meta.chartPreviousClose)}</span>
+            <span>${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(data.meta.chartPreviousClose)}</span>
           </div>
         `
   

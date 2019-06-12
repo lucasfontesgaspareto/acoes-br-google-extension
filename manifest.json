@@ -20,5 +20,6 @@
         "background.js"
       ]
     }
-  ]
+  ],
+  "permissions": ["activeTab"]
 }
